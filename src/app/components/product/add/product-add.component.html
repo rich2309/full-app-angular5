@@ -1,0 +1,40 @@
+<h3>{{ title }}</h3>
+<form #formAddProduct="ngForm" class="row" (ngSubmit)="onSubmit()">
+	<div class="col-lg-6">
+		<div class="form-group">
+			<label for="product_name">Nombre del producto</label>
+			<input #product_name="ngModel" [(ngModel)]="product.name" required
+             class="form-control" type="text" name="product_name" id="product_name">
+      <span class="label label-warinig" *ngIf="!product_name.valid && product_name.touched">El nombre es obligatorio</span>
+		</div>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="form-group">
+					<label for="product_price">Precio</label>
+					<input #product_price="ngModel" [(ngModel)]="product.price" required pattern="[0-9]+([\.][0-9]+)?" step="0.01"
+                 class="form-control" type="text" name="product_price" id="product_price">
+          <span class="label label-warinig" *ngIf="!product_price.valid && product_price.touched">El precio es obligatorio</span>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="form-group">
+					<label for="product_image">Imagen</label>
+					<input class="form-control" type="file" name="product_image" id="product_image">
+				</div>
+			</div>
+		</div>
+	</div>
+  <div class="col-lg-6">
+    <div class="form-group">
+      <label for="product_description">Descripción</label>
+      <textarea #product_description="ngModel" [(ngModel)]="product.description" required
+                class="form-control" name="product_description"
+                id="product_description" cols="30" rows="5"></textarea>
+      <span class="label label-warinig"
+            *ngIf="!product_description.valid && product_description.touched">
+        La descripción es obligatoria
+      </span>
+    </div>
+    <input [disabled]="!formAddProduct.form.valid" class="btn btn-success" type="submit" value="Registrar producto">
+  </div>
+</form>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 // routes
 import { RoutingModule, AppRoutingProviders } from './app.routing';
@@ -9,7 +10,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
-import { ProductListComponent } from './components/producto/product-list.component';
+import { ProductListComponent } from './components/product/list/product-list.component';
+import { ProductAddComponent } from './components/product/add/product-add.component';
 
 
 @NgModule({
@@ -17,12 +19,14 @@ import { ProductListComponent } from './components/producto/product-list.compone
     AppComponent,
     HomeComponent,
     ErrorComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductAddComponent
   ],
   imports: [
     BrowserModule,
     RoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     AppRoutingProviders

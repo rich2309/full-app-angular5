@@ -18,4 +18,11 @@ export class ProductsService {
   getProducts(): Observable<any> {
     return this.http.get(this.url + 'products');
   }
+
+  addProduct(product: Product) {
+    const toJson = JSON.stringify(product);
+    const params = 'data_request=' + toJson;
+    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    return this.http.post(this.url + 'products', params, {headers: headers});
+  }
 }
