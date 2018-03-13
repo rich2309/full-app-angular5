@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 
 // routes
 import { RoutingModule, AppRoutingProviders } from './app.routing';
+
+// http support
 import {HttpClientModule} from '@angular/common/http';
 
 // components

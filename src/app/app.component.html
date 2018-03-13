@@ -1,4 +1,4 @@
-<div id="content" class="col-lg-10 offset-1">
+<div id="content" class="container">
 	<header id="header" class="col-lg-12">
 		<h1>{{ title }}</h1>
 	</header>
@@ -9,11 +9,11 @@
 			<li><a [routerLink]="['/nuevo-producto']" [routerLinkActive]="'active'">Registrar productos</a></li>
 		</ul>
 	</nav>
-	<section id="main" class="col-lg-12">
+	<section>
 		<!-- current components -->
 		<router-outlet></router-outlet>
 	</section>
-	<footer class="col-lg-12">
+	<footer class="footer">
 		<p>&copy;Ricardo García. 2018 All rights reserved</p>
 	</footer>
 </div>

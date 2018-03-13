@@ -4,7 +4,7 @@ export class Product {
   private _name: string;
   private _description: string;
   private _price: number;
-  private _image_url: string;
+  private _url_image: string;
 
   constructor() {}
 
@@ -40,11 +40,11 @@ export class Product {
     this._price = value;
   }
 
-  get image_url(): string {
-    return this._image_url;
+  get url_image(): string {
+    return this._url_image;
   }
 
-  set image_url(value: string) {
-    this._image_url = value;
+  set url_image(value: string) {
+    this._url_image = value;
   }
 }
